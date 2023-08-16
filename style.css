@@ -1,0 +1,66 @@
+* {
+    color: #EDEDED;
+}
+
+.center {
+    margin:auto;
+    text-align:center;
+    padding: 10px;
+}
+
+#header {
+    margin-top: 10vw;
+    width: 90%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 30px;
+    filter: brightness(100%); /* Use the 'filter' property with the 'brightness()' function */
+}
+
+body {
+    justify-content: center;
+    align-items: center;
+    font-family: 'Work Sans', sans-serif;
+    background: #171717;
+}
+
+#wakeup {
+    margin: auto;
+    text-align: center;
+    width: 10em;
+    height: 3em;
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #353535;
+}
+
+#hours {
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 25px;
+    border: none;
+    border-radius: 10px;
+    background: #353535;
+
+}
+
+button {
+    width: 40vw;
+    height: 12vw;
+    border: none;
+    font-size: 20px;
+    border-radius: 10px;
+    font-family: 'Work Sans', sans-serif;
+    margin: auto;
+    text-align: center;
+    background: #353535;
+
+}
+
+#output {
+    width: 10em;
+    margin: auto;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bedtime</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Work+Sans' rel='stylesheet'>
+</head>
+<body>
+<div id="header">
+    <h1>Calculator</h1>
+</div>
+
+<div class="center">
+    <form>
+        <label for="wakeup"></label><input type="time" id="wakeup">
+    </form>
+</div>
+<div class="center">
+    <form>
+        <label for="hours"></label><input type="number" id="hours" value=10 min="2" max="14">
+    </form>
+</div>
+<div class="center">
+    <button id="submit">Submit</button>
+</div>
+<div class="center">
+    <h2 id="output">Time</h2>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const submitButton = document.getElementById('submit');
+
+        submitButton.addEventListener('click', function() {
+            // Get the value of the input elements
+            const wakeupTime = document.getElementById("wakeup").value;
+            const hoursToSubtract = parseInt(document.getElementById("hours").value) || 0;
+
+            // Convert the wakeup time to a Date object
+            const currentDate = new Date();
+            const [hours, minutes] = wakeupTime.split(':');
+            const wakeupDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), hours, minutes);
+
+            // Subtract the specified number of hours
+            wakeupDate.setHours(wakeupDate.getHours() - hoursToSubtract);
+
+            // Format the updated time as a 12-hour format with "AM/PM"
+            const hours12 = ((wakeupDate.getHours() % 12) || 12);
+            const ampm = (wakeupDate.getHours() >= 12) ? 'PM' : 'AM';
+            // Display the formatted time in the element with the id "output"
+            document.getElementById("output").innerHTML = `${hours12}:${wakeupDate.getMinutes().toString().padStart(2, '0')} ${ampm}`;
+        });
+    });
+</script>
+</body>
+</html>
