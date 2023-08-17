@@ -1,0 +1,21 @@
+{
+
+  "name": "Bedtime",
+
+  "short_name": "Bedtime",
+
+  "start_url": "https://zjsnfq1.github.io/bedtime-300708",
+
+  "display": "standalone",
+
+  "icons": [{
+
+    "src": "logo.png",
+
+    "sizes": "512x512",
+
+    "type": "image/png"
+
+  }]
+
+}
